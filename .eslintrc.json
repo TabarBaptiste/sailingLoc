@@ -1,0 +1,104 @@
+{
+    "extends": [
+        "@typescript-eslint/recommended",
+        "@typescript-eslint/recommended-requiring-type-checking",
+        "prettier"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": 2022,
+        "sourceType": "module",
+        "project": "./tsconfig.json"
+    },
+    "plugins": [
+        "@typescript-eslint",
+        "import",
+        "jsdoc"
+    ],
+    "rules": {
+        // Encourage la documentation
+        "jsdoc/require-description": "error",
+        "jsdoc/require-param-description": "error",
+        "jsdoc/require-returns-description": "error",
+        // Types explicites pour de meilleures suggestions
+        "@typescript-eslint/no-explicit-any": "error",
+        "@typescript-eslint/explicit-function-return-type": "error",
+        "@typescript-eslint/explicit-member-accessibility": "error",
+        // Empêcher les variables inutilisées
+        "@typescript-eslint/no-unused-vars": [
+            "error",
+            {
+                "argsIgnorePattern": "^_"
+            }
+        ],
+        // Nommage cohérent
+        "@typescript-eslint/naming-convention": [
+            "error",
+            {
+                "selector": "variable",
+                "format": [
+                    "camelCase",
+                    "UPPER_CASE"
+                ]
+            },
+            {
+                "selector": "function",
+                "format": [
+                    "camelCase"
+                ]
+            },
+            {
+                "selector": "typeLike",
+                "format": [
+                    "PascalCase"
+                ]
+            }
+        ],
+        // Structure de code claire
+        "max-lines-per-function": [
+            "error",
+            50
+        ],
+        "complexity": [
+            "error",
+            10
+        ],
+        // Imports organisés
+        "import/order": [
+            "error",
+            {
+                "groups": [
+                    "builtin",
+                    "external",
+                    "internal",
+                    "parent",
+                    "sibling",
+                    "index"
+                ],
+                "newlines-between": "always"
+            }
+        ],
+        "sort-imports": [
+            "error",
+            {
+                "ignoreCase": true,
+                "ignoreDeclarationSort": true
+            }
+        ],
+        "no-console": [
+            "warn",
+            {
+                "allow": [
+                    "warn",
+                    "error"
+                ]
+            }
+        ],
+        "no-debugger": "error"
+    },
+    "ignorePatterns": [
+        "dist/",
+        "node_modules/",
+        "*.js"
+    ]
+}
