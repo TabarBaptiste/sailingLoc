@@ -3,12 +3,10 @@ name: Bug report
 about: Signaler un bug
 ---
 
-
-**Description**
-(Explique le problème)
+**Description** (Explique le problème)
 
 
-**Reproductibilité**
+**Reproductibilité** (Comment reproduire le problème)
 1.
 2.
 3.
@@ -21,5 +19,6 @@ about: Signaler un bug
 
 
 **Environnement**
+
 - navigateur:
 - version:
